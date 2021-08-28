@@ -30,7 +30,7 @@ function buildPDF(jspdf, args){
     const max_title_chars = 10
     const notice = "This is a preprint. Please cite using:"
     const title = splitString(args.title, 50).join("\n")
-    const citation_padding = 10
+    const citation_padding = 15
 
     doc.setDrawColor(0)
     doc.setFillColor(0, 46, 76)
@@ -51,7 +51,7 @@ function buildPDF(jspdf, args){
 
     doc.setDrawColor(0)
     doc.setFillColor(32, 36, 40)
-    doc.rect(citation_padding, 120, a4[0]-citation_padding*2, 80, "F")
+    doc.rect(citation_padding, 120, a4[0]-citation_padding*2, 65, "F")
     
     doc.setFontSize(13);
     doc.setTextColor(203, 198, 192);
