@@ -1,0 +1,20 @@
+{
+  "name": "mlpi-citation-page",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "npx mocha",
+    "build": "npx webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.1.0",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "jspdf": "^2.3.1"
+  }
+}

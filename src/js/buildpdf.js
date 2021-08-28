@@ -17,7 +17,7 @@ function splitString(str, n){
 }
 
 
-function buildpdf(jspdf, args){
+function buildPDF(jspdf, args){
     const doc = new jspdf.jsPDF({
         orientation: "landscape",
         unit: "mm",
@@ -57,8 +57,8 @@ function buildpdf(jspdf, args){
     doc.setTextColor(203, 198, 192);
     doc.text(args.bibtex, 20, 130, {align: "left"})
     
-    doc.save("a4.pdf")
+    return doc
 }
 
 
-module.exports = buildpdf
+module.exports = buildPDF
