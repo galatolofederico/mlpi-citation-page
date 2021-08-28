@@ -60,4 +60,4 @@ function parseDOI(msg){
     }
 }
 
-module.exports = window.parseDOI = parseDOI
+module.exports = parseDOI

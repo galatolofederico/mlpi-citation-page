@@ -61,4 +61,4 @@ function buildPDF(jspdf, args){
 }
 
 
-module.exports = window.buildPDF = buildPDF
+module.exports = buildPDF
