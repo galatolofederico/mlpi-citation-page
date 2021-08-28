@@ -61,15 +61,3 @@ function parseDOI(msg){
 }
 
 module.exports = window.parseDOI = parseDOI
-
-/*
-+ author
-+ title
-+ journal
-+ year,
-+ volume,
-+ pages
-+ publisher
-+ doi
-+ issn
-*/
