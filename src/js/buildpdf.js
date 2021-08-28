@@ -44,7 +44,7 @@ function buildPDF(jspdf, args){
     doc.text(title, 150, 55, {align: "center"})
     
     doc.setFontSize(18);
-    doc.text(args.authors, 150, 80, {align: "center"})
+    doc.text(args.author, 150, 80, {align: "center"})
 
     doc.setFontSize(30);
     doc.text(notice, 150, 105, {align: "center"})

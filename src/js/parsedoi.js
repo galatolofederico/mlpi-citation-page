@@ -33,11 +33,11 @@ function parseDOI(msg){
 
     let volume = (data.volume !== undefined) ? data.volume : ""
     
-    let page = (data.page !== undefined) ? data.page : ""
+    let pages = (data.page !== undefined) ? data.page : ""
     
     let year = ""
     if(data.deposited !== undefined && data.deposited.timestamp !== undefined)
-        year = new Date(data.deposited.timestamp).getFullYear()
+        year = new Date(data.deposited.timestamp).getFullYear().toString()
     
     let doi = (data.DOI !== undefined) ? data.DOI : ""
 
@@ -53,7 +53,7 @@ function parseDOI(msg){
         journal: journal,
         year: year,
         volume: volume,
-        page: page,
+        pages: pages,
         publisher: publisher,
         doi: doi,
         issn: issn
