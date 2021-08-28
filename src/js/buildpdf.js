@@ -1,3 +1,5 @@
+const jspdf = require("jspdf")
+
 function splitString(str, n){
     let arr = str?.split(' ');
     let result=[]
@@ -17,7 +19,7 @@ function splitString(str, n){
 }
 
 
-function buildPDF(jspdf, args){
+function buildPDF(args){
     const doc = new jspdf.jsPDF({
         orientation: "landscape",
         unit: "mm",
