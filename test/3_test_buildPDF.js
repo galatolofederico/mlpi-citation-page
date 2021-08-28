@@ -20,7 +20,6 @@ describe("buildPDF", () => {
             author: data.author,
             bibtex: bibtex
         })
-        doc.save("a4.pdf")
     })
 
     
