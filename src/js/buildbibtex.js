@@ -16,4 +16,4 @@ function buildBibtex(data){
 `
 }
 
-module.exports = buildBibtex
+module.exports = window.buildBibtex = buildBibtex

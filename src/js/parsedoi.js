@@ -60,7 +60,7 @@ function parseDOI(msg){
     }
 }
 
-module.exports = parseDOI
+module.exports = window.parseDOI = parseDOI
 
 /*
 + author
