@@ -9,10 +9,10 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@main
-      - name: Install Dependencies
-        run: npm install
-      - name: Build for production
-        run: npm run build
+      - name: Install Dependencies and Build for production
+        run: |
+          npm install
+          npm run build
       - name: Deploy 
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
