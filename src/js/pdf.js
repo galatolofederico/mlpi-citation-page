@@ -63,7 +63,7 @@ function buildPDF(args){
 
     doc.setDrawColor(0)
     doc.setFillColor(32, 36, 40)
-    doc.rect(citation_padding, 185, a4[0]-citation_padding*2, 20, "F")
+    doc.rect(citation_padding, 185, a4[0]-citation_padding*2, 22, "F")
     
     doc.setFontSize(13);
     doc.setTextColor(203, 198, 192);
