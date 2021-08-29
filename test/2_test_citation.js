@@ -13,6 +13,7 @@ describe("buildBibtex", () => {
     title={Generating Images from Caption and Vice Versa via CLIP-Guided Generative Latent Space Search},
     journal={Proceedings of the International Conference on Image Processing and Vision Engineering},
     year={2021},
+    volume={},
     pages={},
     publisher={SCITEPRESS - Science and Technology Publications},
     doi={10.5220/0010503701660174},
@@ -20,5 +21,13 @@ describe("buildBibtex", () => {
 }
 `
         assert.equal(bibtex == result, true)        
-    })  
+    })
+
+    it("should process 'glass' APA", () => {
+        let data = parseDOI(replies.glass)
+        let apa = citation.buildAPA(data)
+        let result = `Federico Galatolo, Mario Cimino, Gigliola Vaglini. "Generating Images from Caption and Vice Versa via CLIP-Guided Generative Latent Space Search" Proceedings of the International Conference on Image Processing and Vision Engineering  (2021): .`
+
+        assert.equal(apa == result, true)        
+    })
 })
