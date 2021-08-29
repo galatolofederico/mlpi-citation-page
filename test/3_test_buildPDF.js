@@ -5,7 +5,7 @@ const replies = require("./replies.json")
 
 const buildBibtex = require("../src/js/buildbibtex")
 const parseDOI = require("../src/js/parsedoi")
-const buildPDF = require("../src/js/buildpdf")
+const buildPDF = require("../src/js/pdf")
 
 describe("buildPDF", () => {
     it("should build 'glass' PDF", () => {
@@ -20,7 +20,7 @@ describe("buildPDF", () => {
             bibtex: bibtex
         })
         if(process.env.SAVE_PDF){
-            doc.save("outout.pdf")
+            doc.save("output.pdf")
         }
     })
 })
