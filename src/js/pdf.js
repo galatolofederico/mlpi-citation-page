@@ -31,9 +31,19 @@ function buildPDF(args){
     const a4 = [297, 210]
     const max_title_chars = 10
     const notice = "This is a preprint. Please cite using:"
-    const title = splitString(args.title, 50).join("\n")
+    const title = splitString(args.title, 60).join("\n")
+    const author = splitString(args.author, 90).join("\n")
     const apa = splitString(args.apa, 120).join("\n")
     const citation_padding = 15
+    
+    let author_height = 80
+    if(splitString(args.title, 60).length > 2){
+        author_height = 87
+    }
+    let notice_height = 105
+    if(splitString(args.author, 90).length > 1){
+        notice_height = 110
+    }
 
     doc.setDrawColor(0)
     doc.setFillColor(0, 46, 76)
@@ -47,10 +57,10 @@ function buildPDF(args){
     doc.text(title, 150, 55, {align: "center"})
     
     doc.setFontSize(18);
-    doc.text(args.author, 150, 80, {align: "center"})
+    doc.text(author, 150, author_height, {align: "center"})
 
     doc.setFontSize(30);
-    doc.text(notice, 150, 105, {align: "center"})
+    doc.text(notice, 150, notice_height, {align: "center"})
 
     doc.setDrawColor(0)
     doc.setFillColor(32, 36, 40)
