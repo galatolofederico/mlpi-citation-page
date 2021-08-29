@@ -19,7 +19,8 @@ describe("buildPDF", () => {
             author: data.author,
             bibtex: bibtex
         })
+        if(process.env.SAVE_PDF){
+            doc.save("outout.pdf")
+        }
     })
-
-    
 })
