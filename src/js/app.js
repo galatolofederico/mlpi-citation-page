@@ -1,10 +1,11 @@
-const buildBibtex = require("./citation")
+const citation = require("./citation")
 const buildPDF = require("./pdf")
 const parseDOI = require("./doi")
 
-
 const jspdf = require("jspdf")
 
+import "bootstrap"
+import "../scss/app.scss"
 
 function getImage(url) {
     return new Promise((res, rej) => {
@@ -29,7 +30,8 @@ function generatePDF(){
         issn: document.getElementById("issn").value 
     }
 
-    let bibtex = buildBibtex(data)
+    let bibtex = citation.buildBibtex(data)
+    let apa = citation.buildAPA(data)
 
     Promise.all([
         getImage("./assets/unipi-logo.png"),
@@ -42,7 +44,8 @@ function generatePDF(){
             mlpi: images[2],
             title: data.title,
             author: data.author,
-            bibtex: bibtex
+            bibtex: bibtex,
+            apa: apa
         })
         doc.save("citation.pdf")
     })
@@ -56,7 +59,7 @@ function fetchDOI(){
     fetch(`https://api.crossref.org/works/${doi}`)
     .then(response => response.json())
     .then(resp => {
-        data = parseDOI(resp)
+        let data = parseDOI(resp)
 
         document.getElementById("author").value = data.author
         document.getElementById("title").value = data.title
