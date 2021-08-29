@@ -32,6 +32,7 @@ function buildPDF(args){
     const max_title_chars = 10
     const notice = "This is a preprint. Please cite using:"
     const title = splitString(args.title, 50).join("\n")
+    const apa = splitString(args.apa, 120).join("\n")
     const citation_padding = 15
 
     doc.setDrawColor(0)
@@ -53,12 +54,21 @@ function buildPDF(args){
 
     doc.setDrawColor(0)
     doc.setFillColor(32, 36, 40)
-    doc.rect(citation_padding, 120, a4[0]-citation_padding*2, 65, "F")
+    doc.rect(citation_padding, 115, a4[0]-citation_padding*2, 65, "F")
     
     doc.setFontSize(13);
     doc.setTextColor(203, 198, 192);
-    doc.text(args.bibtex, 20, 130, {align: "left"})
+    doc.text(args.bibtex, 20, 123, {align: "left"})
     
+
+    doc.setDrawColor(0)
+    doc.setFillColor(32, 36, 40)
+    doc.rect(citation_padding, 185, a4[0]-citation_padding*2, 20, "F")
+    
+    doc.setFontSize(13);
+    doc.setTextColor(203, 198, 192);
+    doc.text(apa, 20, 193, {align: "left"})
+
     return doc
 }
 

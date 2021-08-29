@@ -20,7 +20,5 @@ describe("buildBibtex", () => {
 }
 `
         assert.equal(bibtex == result, true)        
-    })
-
-    
+    })  
 })

@@ -9,15 +9,17 @@ const buildPDF = require("../src/js/pdf")
 
 describe("buildPDF", () => {
     it("should build 'glass' PDF", () => {
-        let data = parseDOI(replies.glass)
-        let bibtex = citation.buildBibtex(data);
+        let data = parseDOI(replies.solving)
+        let bibtex = citation.buildBibtex(data)
+        let apa = citation.buildAPA(data)
         let doc = buildPDF({
             unipi: fs.readFileSync("./assets/unipi-logo.png", null),
             dii: fs.readFileSync("./assets/dii-logo.png", null),
             mlpi: fs.readFileSync("./assets/mlpi-logo.png", null),
             title: data.title,
             author: data.author,
-            bibtex: bibtex
+            bibtex: bibtex,
+            apa: apa
         })
         if(process.env.SAVE_PDF){
             doc.save("output.pdf")

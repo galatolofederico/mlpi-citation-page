@@ -8,6 +8,7 @@ function buildBibtex(data){
     title={${data.title}},
     journal={${data.journal}},
     year={${data.year}},
+    volume={${data.volume}},
     pages={${data.pages}},
     publisher={${data.publisher}},
     doi={${data.doi}},
@@ -16,6 +17,12 @@ function buildBibtex(data){
 `
 }
 
+
+function buildAPA(data){
+    return `${data.author}. "${data.title}" ${data.journal} ${data.volume} (${data.year}): ${data.pages}.`
+}
+
 module.exports = {
-    buildBibtex: buildBibtex
+    buildBibtex: buildBibtex,
+    buildAPA: buildAPA
 }
