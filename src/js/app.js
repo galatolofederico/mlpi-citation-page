@@ -1,6 +1,6 @@
 const buildBibtex = require("./buildbibtex")
 const buildPDF = require("./pdf")
-const parseDOI = require("./parsedoi")
+const parseDOI = require("./doi")
 
 
 const jspdf = require("jspdf")

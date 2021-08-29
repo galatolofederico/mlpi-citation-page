@@ -4,7 +4,7 @@ const fs = require("fs")
 const replies = require("./replies.json")
 
 const buildBibtex = require("../src/js/buildbibtex")
-const parseDOI = require("../src/js/parsedoi")
+const parseDOI = require("../src/js/doi")
 const buildPDF = require("../src/js/pdf")
 
 describe("buildPDF", () => {

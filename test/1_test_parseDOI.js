@@ -1,7 +1,7 @@
 const assert = require("assert")
 const replies = require("./replies.json")
 
-const parseDOI = require("../src/js/parsedoi")
+const parseDOI = require("../src/js/doi")
 
 describe("parseDOI", () => {
     it("should process 'glass' DOI", () => {

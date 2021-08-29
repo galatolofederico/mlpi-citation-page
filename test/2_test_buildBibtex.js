@@ -2,7 +2,7 @@ const assert = require("assert")
 const replies = require("./replies.json")
 
 const buildBibtex = require("../src/js/buildbibtex")
-const parseDOI = require("../src/js/parsedoi")
+const parseDOI = require("../src/js/doi")
 
 describe("buildBibtex", () => {
     it("should process 'glass' Bibtex", () => {
