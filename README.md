@@ -1,6 +1,6 @@
 # mlpi-citation-page
 
-WebApp for generating an [MLPI](http://mlpi.ing.unipi.it/)-branded **citation page** like this:
+WebApp for generating [MLPI](http://mlpi.ing.unipi.it/)-branded **citation pages** like this:
 
 ![example](./README.md.d/example.png)
 
