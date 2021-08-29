@@ -1,4 +1,4 @@
-const buildBibtex = require("./buildbibtex")
+const buildBibtex = require("./citation")
 const buildPDF = require("./pdf")
 const parseDOI = require("./doi")
 
