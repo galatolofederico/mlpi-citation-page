@@ -1,5 +1,5 @@
 const citation = require("./citation")
-const buildPDF = require("./pdf")
+const pdf = require("./pdf")
 const parseDOI = require("./doi")
 
 const jspdf = require("jspdf")
@@ -17,7 +17,7 @@ function getImage(url) {
     })
 }
 
-function generatePDF(){
+function generateCitationPDF(){
     let data = {
         author: document.getElementById("author").value,
         title: document.getElementById("title").value,
@@ -38,7 +38,7 @@ function generatePDF(){
         getImage("./assets/dii-logo.png"),
         getImage("./assets/mlpi-logo.png"),
     ]).then(images => {
-        let doc = buildPDF({
+        let doc = pdf.buildCitationPDF({
             unipi: images[0],
             dii: images[1],
             mlpi: images[2],
@@ -48,6 +48,31 @@ function generatePDF(){
             apa: apa
         })
         doc.save("citation.pdf")
+    })
+}
+
+
+
+function generatePreprintPDF(){
+    let data = {
+        author: document.getElementById("author").value,
+        title: document.getElementById("title").value,
+    }
+
+    Promise.all([
+        getImage("./assets/unipi-logo.png"),
+        getImage("./assets/dii-logo.png"),
+        getImage("./assets/mlpi-logo.png"),
+    ]).then(images => {
+        let doc = pdf.buildPreprintPDF({
+            unipi: images[0],
+            dii: images[1],
+            mlpi: images[2],
+            title: data.title,
+            author: data.author,
+            notice_link: "http://mlpi.ing.unipi.it/"
+        })
+        doc.save("preprint.pdf")
     })
 }
 
@@ -73,5 +98,6 @@ function fetchDOI(){
     })
 }
 
-window.generatePDF = generatePDF
+window.generateCitationPDF = generateCitationPDF
+window.generatePreprintPDF = generatePreprintPDF
 window.fetchDOI = fetchDOI
