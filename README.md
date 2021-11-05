@@ -38,6 +38,20 @@ To build the production version run
 npm run build
 ```
 
+## CLI interface
+
+you can use the CLI interface by running
+
+```
+node cli.js
+```
+
+for the arguments list run
+
+```
+node cli.js --help
+```
+
 The builded webapp will be available in `./dist`
 
 ## Contributions and license
