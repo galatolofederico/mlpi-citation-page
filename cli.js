@@ -21,7 +21,6 @@ async function main(options){
     }
 
     if (options.doi !== undefined){
-        console.log(options.doi)
         doi = options.doi.replace("https://doi.org/", "")
         data = await (new Promise((res, rej) => {
             request(`https://api.crossref.org/works/${doi}`, (err, resp, body) => {
