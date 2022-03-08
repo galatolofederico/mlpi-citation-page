@@ -34,9 +34,9 @@ function buildCitationPDF(args){
     const apa = splitString(args.apa, 120).join("\n")
     const citation_padding = 15
     
-    let author_height = 83
-    if(splitString(args.title, 60).length > 2){
-        author_height = 90
+    let author_height = 76
+    if(splitString(args.title, 60).length > 1){
+        author_height = 83
     }
     let notice_height = 107
     if(splitString(args.author, 90).length > 1){
@@ -101,9 +101,9 @@ function buildPreprintPDF(args){
     const title = splitString(args.title, 60).join("\n")
     const author = splitString(args.author, 90).join("\n")
     
-    let author_height = 100
-    if(splitString(args.title, 60).length > 2){
-        author_height += 7
+    let author_height = 85
+    if(splitString(args.title, 60).length > 1){
+        author_height = 97
     }
     let notice_height = 175
     if(splitString(args.author, 90).length > 1){
