@@ -34,13 +34,13 @@ function buildCitationPDF(args){
     const apa = splitString(args.apa, 120).join("\n")
     const citation_padding = 15
     
-    let author_height = 80
+    let author_height = 83
     if(splitString(args.title, 60).length > 2){
-        author_height = 87
+        author_height = 90
     }
-    let notice_height = 105
+    let notice_height = 107
     if(splitString(args.author, 90).length > 1){
-        notice_height = 110
+        notice_height = 112
     }
 
     doc.setDrawColor(0)
@@ -51,13 +51,13 @@ function buildCitationPDF(args){
     doc.addImage(args.mlpi, "PNG", 130, 3, 30, 35)
     doc.addImage(args.dii, "PNG", 220, 13, 60, 13)
 
-    doc.setFontSize(25);
-    doc.text(title, 150, 55, {align: "center"})
+    doc.setFontSize(28);
+    doc.text(title, 150, 58, {align: "center"})
     
     doc.setFontSize(18);
     doc.text(author, 150, author_height, {align: "center"})
 
-    doc.setFontSize(30);
+    doc.setFontSize(18);
     doc.text(notice, 150, notice_height, {align: "center"})
 
     doc.setDrawColor(0)
@@ -105,7 +105,7 @@ function buildPreprintPDF(args){
     if(splitString(args.title, 60).length > 2){
         author_height += 7
     }
-    let notice_height = 140
+    let notice_height = 175
     if(splitString(args.author, 90).length > 1){
         notice_height += 5
     }
@@ -118,18 +118,18 @@ function buildPreprintPDF(args){
     doc.addImage(args.mlpi, "PNG", 130, 3, 30, 35)
     doc.addImage(args.dii, "PNG", 220, 13, 60, 13)
 
-    doc.setFontSize(25);
+    doc.setFontSize(28);
     doc.text(title, 150, 70, {align: "center"})
     
     doc.setFontSize(18);
     doc.text(author, 150, author_height, {align: "center"})
 
-    doc.setFontSize(30);
+    doc.setFontSize(18);
     doc.text(notice, 150, notice_height, {align: "center"})
 
 
     doc.setFontSize(20);
-    doc.text(link, 150, 180, {align: "center"})
+    doc.text(link, 150, 190, {align: "center"})
 
     doc.setProperties({
         title: args.title,
