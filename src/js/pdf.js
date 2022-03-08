@@ -77,6 +77,11 @@ function buildCitationPDF(args){
     doc.setTextColor(203, 198, 192);
     doc.text(apa, 20, 193, {align: "left"})
 
+    doc.setProperties({
+        title: args.title,
+        author: args.author,
+    })
+
     return doc
 }
 
@@ -125,6 +130,11 @@ function buildPreprintPDF(args){
 
     doc.setFontSize(20);
     doc.text(link, 150, 180, {align: "center"})
+
+    doc.setProperties({
+        title: args.title,
+        author: args.author,
+    })
 
     return doc
 }
