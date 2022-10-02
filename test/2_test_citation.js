@@ -9,7 +9,7 @@ describe("buildBibtex", () => {
         let data = parseDOI(replies.glass)
         let bibtex = citation.buildBibtex(data)
         let result = `@article{generating2021,
-    author={Federico Galatolo. and  Mario Cimino. and  Gigliola Vaglini},
+    author={Galatolo, Federico and Cimino, Mario and Vaglini, Gigliola},
     title={Generating Images from Caption and Vice Versa via CLIP-Guided Generative Latent Space Search},
     journal={Proceedings of the International Conference on Image Processing and Vision Engineering},
     year={2021},
@@ -19,7 +19,7 @@ describe("buildBibtex", () => {
     doi={10.5220/0010503701660174},
     issn={},
 }
-`
+`       
         assert.equal(bibtex == result, true)        
     })
 
