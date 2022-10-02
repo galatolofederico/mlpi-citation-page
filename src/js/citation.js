@@ -1,7 +1,16 @@
 
 function buildBibtex(data){
     let entry = data.title.split(" ")[0].toLowerCase()+data.year
-    let author = data.author.split(",").join(". and ")
+    let author = data.author
+    .split(",")
+    .map(name => {
+        let parts = name.split(" ")
+        .map(e => e.replace(/\s/g, ''))
+        .filter(e => e.length > 0)
+        console.log(parts)
+        return parts[parts.length-1]+", "+parts.slice(0, -1).join(" ")
+    })
+    .join(" and ")
 
     return `@article{${entry},
     author={${author}},
