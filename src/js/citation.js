@@ -11,6 +11,7 @@ function buildBibtex(data){
         return parts[parts.length-1]+", "+parts.slice(0, -1).join(" ")
     })
     .join(" and ")
+    .replace("_", " ")
 
     return `@article{${entry},
     author={${author}},
